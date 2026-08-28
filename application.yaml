@@ -8,7 +8,7 @@ spec:
   sources:
     - repoURL: https://helm.goharbor.io
       chart: harbor
-      targetRevision: 1.19.0          # <-- the upgrade knob
+      targetRevision: 1.19.2          # <-- the upgrade knob
       helm:
         valueFiles:
           - $values/values-harbor.yaml
