@@ -1,0 +1,34 @@
+expose:
+  type: nodePort
+  tls:
+    enabled: false
+externalURL: http://localhost:30002
+
+harborAdminPassword: Harbor12345
+
+database:
+  type: external
+  external:
+    host: postgres.db.svc.cluster.local
+    port: "5432"
+    username: postgres
+    password: labpassword
+    coreDatabase: registry
+    sslmode: disable
+
+persistence:
+  persistentVolumeClaim:
+    registry:
+      size: 5Gi
+
+# Pinned on purpose — see the note below
+secretKey: "lab0123456789abc"
+core:
+  secret: "lab-core-secret"
+  xsrfKey: "lab0123456789abcdef0123456789abc"
+jobservice:
+  secret: "lab-jobservice-sec"
+registry:
+  credentials:
+    username: harbor_registry_user
+    password: lab-registry-pass
