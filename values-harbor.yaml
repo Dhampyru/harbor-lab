@@ -32,3 +32,4 @@ registry:
   credentials:
     username: harbor_registry_user
     password: lab-registry-pass
+    htpasswdString: "harbor_registry_user:$2y$10$kAgGQfupaSpNAZJRnitwbeVZzGJaDmKwDNC1WmzjfNfeKkFCSyIpO"
